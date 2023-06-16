@@ -7,6 +7,7 @@ import Navigation from './Components/Navigation/Navigation';
 import Gallery from './Components/Gallery/Gallery.js';
 import Home from './Components/Home/Home.js';
 import About from './Components/About/About.js';
+import Search from './Components/SearchBox/SearchBox.js'
 import {BrowserRouter as Router , Routes , Route , Navigate ,} from 'react-router-dom';
 
 const isLoggedIn = true;
@@ -50,18 +51,20 @@ class App extends React.Component{
         );
       } else {
      return (
+      
        <div className='App'>
        <Router>
         <Routes>  
         <Route path="/" element={isLoggedIn ? <Navigate to="/signin" /> : null} />
         <Route path="/Navigation" element={<Navigation />} />
+        <Route path="/Search" element={<Search />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/home" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/About" element={<About />} />
-        <Route path="/gallery" element={<Gallery />} />
+        <Route exact path="/gallery" element={<Gallery />}  />
         <Route path="/video" element={<Main />} />
-        </Routes>
+        </Routes>  
        </Router>
          </div>
      )
@@ -72,3 +75,4 @@ class App extends React.Component{
 
 
 export default App;
+
