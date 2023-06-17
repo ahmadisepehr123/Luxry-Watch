@@ -8,8 +8,8 @@ class Gallery extends Component {
     super();
     this.state = {
       Watch: [],
-      counts: [0,0,0,0,0,0,0,0,0,0],
-      h2Values: [0,0,0,0,0,0,0,0,0,0],
+      counts: [0,0,0,0,0,0,0,0,0],
+      h2Values: [499,1199,699,599,399,449,1499,699,1999],
       img:
         "https://monochrome-watches.com/wp-content/uploads/2020/11/Audemars-Piguet-Royal-Oak-Double-Balance-Wheel-Openworked-Ceramic-41mm-15416CE.OO_.1225CE.01-review-8.jpg",
       searchTerm: "",
@@ -71,7 +71,7 @@ class Gallery extends Component {
                 <article>
                   <img src={val.image} alt="Watch" />
                   <div className="pa2 ph3-ns">
-                    {val.title}
+                    <h3>{val.title}</h3>
                     <div className="dt w-100 mt2">
                       <div className="dtc"></div>
                       <div className="dtc tr">
@@ -107,22 +107,25 @@ class Gallery extends Component {
   handleIncrement = (index) => {
     const counts = [...this.state.counts];
     counts[index] += 1;
-    const h2Value = counts[index] * 1000;
+  
     const h2Values = [...this.state.h2Values];
-    h2Values[index] = h2Value;
+    const sum = this.state.counts.reduce((a, b) => a + (b > 0 ? 1 : 0), 0);
+    h2Values[index] += sum * 1000;
+  
     this.setState({ counts, h2Values });
   };
   
-  handleDecrement = (index) => {
-    const counts = [...this.state.counts];
-    if (counts[index] > 0) {
-      counts[index] -= 1;
-      const h2Value = counts[index] * 1000;
-      const h2Values = [...this.state.h2Values];
-      h2Values[index] = h2Value;
-      this.setState({ counts, h2Values });
-    }
-  };
+  
+handleDecrement = (index) => {
+  const counts = [...this.state.counts];
+  if (counts[index] > 0) {
+    counts[index] -= 1;
+    const h2Values = [...this.state.h2Values];
+    const sum = counts.reduce((a, b) => a + (b > 0 ? 1 : 0), 0);
+    h2Values[index] -= sum * 1000;
+    this.setState({ counts, h2Values });
+  }
+};
 
 }
 

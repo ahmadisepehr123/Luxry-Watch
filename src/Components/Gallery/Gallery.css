@@ -53,7 +53,6 @@ button {
  .zone{
     width: 350px;
     margin: 20px;
-    flex-wrap: wrap;
     display: flex;
     justify-content: center;
     border-radius: 20px;
@@ -309,8 +308,11 @@ button {
 /* == type to see fully interactive and click the close buttom to remove the text  == */
 
 .group {
-  margin-left:600px;
-  padding-top:1000px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 130px;
   display: flex;
   line-height: 28px;
   align-items: center;
