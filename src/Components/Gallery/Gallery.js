@@ -82,7 +82,7 @@ class Gallery extends Component {
                       </div>
                     </div>
                     <p className="f6 lh-copy measure mt2 mid-gray">
-                      This is the product description.
+                      This is the luxury Watch
                     </p>
                     <button
                       onClick={() => this.handleIncrement(index)}
