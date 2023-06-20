@@ -1,124 +1,98 @@
-.maig{
-    display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top:140px;
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 360px;
+  height: 400px;
+  background: #ffffff;
+}
+.card .image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.card .image img {
+  width: 100%;
+  transition: .5s;
+}
+.card:hover .image img {
+  opacity: .5;
+  transform: translateX(30%);/*100%*/
+}
+.card .details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;/*100%*/
+  height: 100%;
+  background: #07ffc5;
+  transition: .5s;
+  transform-origin: left;
+  transform: perspective(2000px) rotateY(-90deg);
+}
+.card:hover .details {
+  transform: perspective(2000px) rotateY(0deg);
+}
+.card .details .center {
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.card .details .center h1 {
+  margin: 0;
+  padding: 0;
+  color: #36ff7c;
+  line-height: 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.card .details .center h1 span {
+  font-size: 14px;
+  color: #262626;
+}
+.card .details .center p {
+  margin: 10px 0;
+  padding: 0;
+  color: #262626;
+}
+.card .details .center ul {
+  margin: 10px auto 0;
+  padding: 0;
+  display: table;
+}
+.card .details .center ul li {
+  list-style: none;
+  margin: 0 5px;
+  float: left;
+}
+.card .details .center ul li a {
+  
+  border-radius:15px;
+  display: block;
+  background: #262626;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  transform: .5s;
 }
 
-.card-client {
-    background: #2cb5a0;
-    width: 13rem;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border: 4px solid #7cdacc;
-    box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
-    border-radius: 10px;
-    text-align: center;
-    color: #fff;
-    font-family: "Poppins", sans-serif;
-    transition: all 0.3s ease;
-  }
-  
-  .card-client:hover {
-    transform: translateY(-10px);
-  }
-  
-  .user-picture {
-    overflow: hidden;
-    object-fit: cover;
-    width: 5rem;
-    height: 5rem;
-    border: 4px solid #7cdacc;
-    border-radius: 999px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-  }
-  
-  .user-picture svg {
-    width: 2.5rem;
-    fill: currentColor;
-  }
-  
-  .name-client {
-    margin: 0;
-    margin-top: 20px;
-    font-weight: 600;
-    font-size: 18px;
-  }
-  
-  .name-client span {
-    display: block;
-    font-weight: 200;
-    font-size: 16px;
-  }
-  
-  .social-media:before {
-    content: " ";
-    display: block;
-    width: 100%;
-    height: 2px;
-    margin: 20px 0;
-    background: #7cdacc;
-  }
-  
-  .social-media a {
-    display: inline-block;
-  margin-right: 10px;
-    position: relative;
-    margin-right: 15px;
-    text-decoration: none;
-    color: inherit;
-  }
-  .social-media > * {
-    flex: 1 1 auto;
-  }
-  .social-media a:last-child {
-    margin-right: 0;
-  }
-  
-  .social-media a svg {
-    width: 1.1rem;
-    fill: currentColor;
-  }
-  
-  /*-- Tooltip Social Media --*/
-  .tooltip-social {
-    background: #262626;
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    padding: 0.5rem 0.4rem;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    opacity: 0;
-    pointer-events: none;
-    transform: translate(-50%, -90%);
-    transition: all 0.2s ease;
-    z-index: 1;
-  }
-  
-  .tooltip-social:after {
-    content: " ";
-    position: absolute;
-    bottom: 1px;
-    left: 50%;
-    border: solid;
-    border-width: 10px 10px 0 10px;
-    border-color: transparent;
-    transform: translate(-50%, 100%);
-  }
-  
-  .social-media a .tooltip-social:after {
-    border-top-color: #262626;
-  }
-  
-  .social-media a:hover .tooltip-social {
-    opacity: 1;
-    transform: translate(-50%, -130%);
-  }
+.card .details .center .twitter:hover {
+  background-color:rgb(0, 149, 255);
+}
+
+.card .details .center .google:hover {
+  background-image:linear-gradient(to right, rgb(255, 0, 0), rgb(255, 150, 51));
+}
+.card .details .center .linkedin:hover{
+    background:rgb(15, 3, 97);
+}
+.card .details .center .insta:hover{
+    
+    background:linear-gradient( rgb(255, 0, 76), rgb(255, 221, 0));
+}
