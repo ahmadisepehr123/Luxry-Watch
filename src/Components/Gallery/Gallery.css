@@ -1,7 +1,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
 
 
-button {
+.btn-gallery {
     font-family: 'Old Standard TT', serif;
     width: fit-content;
     min-width: 100px;
@@ -16,14 +16,14 @@ button {
     user-select: none;
   }
  
-  button:hover {
+.btn-gallery:hover {
     background-color: #F2F2F2;
     box-shadow: 0px 0px 20px -18px;
     margin: 7px;
     transform: scale(1.1);
   }
   
-  button:active {
+.btn-gallery:active {
     transform: scale(0.95);
   }
   
@@ -39,7 +39,7 @@ button {
   
  
 
-  h1,p{
+  h1,#p-gallery{
     font-weight:bold;
     font-family: 'Old Standard TT', serif;
   } 

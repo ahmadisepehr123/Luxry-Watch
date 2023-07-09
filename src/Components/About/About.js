@@ -2,7 +2,9 @@ import React from "react";
 import './About.css'
 import Navigation from '../Navigation/Navigation.js';
 const About = () => {
+ 
    return (
+   
      <div>
        
          <div className="card">
