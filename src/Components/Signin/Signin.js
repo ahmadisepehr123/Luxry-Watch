@@ -31,8 +31,8 @@ const Signin = ({loadUser}) => {
         .then(user => {
            if(user.id){
                 loadUser(user);
-                navigate('/home');
-              
+                navigate('/home');  
+                console.log(user)
             }else{
                 notiferr()
             } 

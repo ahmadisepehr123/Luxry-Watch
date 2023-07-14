@@ -37,7 +37,10 @@
       transition:linear 1s;
   }
   
- 
+ .price{
+  padding-right: 150px;
+  margin-bottom: 50px;
+ }
 
   h1,#p-gallery{
     font-weight:bold;

@@ -22,10 +22,10 @@ class App extends React.Component {
       },
     };
   }
-
+  
   loadUser = (data) => {
     this.setState({
-      isLoggedIn: false,
+      isLoggedIn: true,
       user: {
         id: data.id,
         name: data.name,
@@ -82,10 +82,10 @@ class App extends React.Component {
           <Router>
             <Routes>
               <Route path="/" element={this.state.isLoggedIn ? <Navigate to="/home" /> : <Navigate to="/signin" />} />
-              <Route path="/home" element={<Home />} />
+              <Route path="/home" element={<Home name={this.state.user.name} />} />
               <Route path="/Navigation" element={<Navigation />} />
               <Route path="/About" element={<About />} />
-              <Route  path="/gallery" element={<Gallery name={this.state.user.name} />} />
+              <Route  path="/gallery" element={<Gallery  name={this.state.user.name} />} />
               <Route path="/video" element={<Main />} />
               <Route path="/signin" element={<Signin loadUser={this.loadUser} />} />
               <Route path="/register" element={<Register loadUser={this.loadUser} />} />
