@@ -20,6 +20,24 @@ function Gallery() {
       .then((response) => response.json())
       .then((users) => setWatch(users));
   }, []);
+
+
+  useEffect(() => {
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    const newCounts = [...counts];
+    cartItems.forEach((item) => {
+      newCounts[item.id] = item.count;
+    });
+    setCounts(newCounts);
+  }, []);
+
+  useEffect(() => {
+    const newPrice = counts.map((count, index) => count * h2Values[index]);
+    setPrice(newPrice);
+    localStorage.setItem("cart", JSON.stringify(
+      counts.map((count, id) => ({ id, count }))
+    ));
+  }, [counts]);
     const Buy = () => toast.success('سفارش شما ثبت شد و بعد از دو رو به ایمیل یک سری فرم فرستاده میشود', {
     position: "top-center",
     autoClose: 5000,
